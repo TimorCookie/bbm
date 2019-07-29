@@ -1,7 +1,7 @@
 import React,  { Component, Suspense, lazy, useState } from 'react';
 import './App.css';
 import {HashRouter as Router , Route, Switch, Redirect} from 'react-router-dom';
-
+import './assets/css/reset.css';
 const Header = lazy(() => import('./components/Header/header.js'));
 const Home = lazy(() => import('./pages/Home/home.js'));
 const About = lazy(() => import('./pages/About/about.js'));
