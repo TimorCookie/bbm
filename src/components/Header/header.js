@@ -1,19 +1,7 @@
-import React from 'react';
+import React, {useState,useEffect}from 'react';
 import './header.scss';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 function Menu(props) {
-    return(
-        <ul className="menus-list">
-            {props.tablist.map((el,index)=><li key={index} className="menu-item">
-            <Link to={el.link}>
-                {el.name}
-            </Link>
-            </li>)}
-        </ul>
-    )
-}
-export default function Header() {
-    
     const tablist = [
         {
             name: '首页',
@@ -34,11 +22,32 @@ export default function Header() {
         {
             name: '课程风采',
             link: '/about'
+        },
+        {
+            name: '精彩活动',
+            link: '/about'
         }
     ]
+    const [activeTab, setActiveTab] = useState('首页')
+    useEffect(()=>{
+        
+    },[])
+    return(
+        <ul className="menus-list">
+            {tablist.map((el,index)=><li key={index} className={activeTab===el.name?'menu-item-active':'menu-item'}>
+            <NavLink to={el.link}>
+                {el.name}
+            </NavLink>
+            </li>)}
+        </ul>
+    )
+}
+export default function Header() {
+    
     return(
         <div className="header-component">
-            <Menu tablist={tablist}/>
+            <div className="header-logo"></div>
+            <Menu />
         </div>
     )
 }
