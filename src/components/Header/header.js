@@ -28,14 +28,14 @@ function Menu(props) {
             link: '/about'
         }
     ]
-    const [activeTab, setActiveTab] = useState('首页')
+    
     useEffect(()=>{
         
     },[])
     return(
         <ul className="menus-list">
-            {tablist.map((el,index)=><li key={index} className={activeTab===el.name?'menu-item-active':'menu-item'}>
-            <NavLink to={el.link}>
+            {tablist.map((el,index)=><li key={index} className={props.activeTab===el.name?'menu-item-active':'menu-item'}>
+            <NavLink to={el.link} onClick={()=>props.chooseTab(el.name)}>
                 {el.name}
             </NavLink>
             </li>)}
@@ -43,11 +43,14 @@ function Menu(props) {
     )
 }
 export default function Header() {
-    
+    const [activeTab, setActiveTab] = useState('首页')
+    function chooseTab(value) {
+        setActiveTab(value)
+    }
     return(
         <div className="header-component">
             <div className="header-logo"></div>
-            <Menu />
+            <Menu activeTab={activeTab} chooseTab={chooseTab}/>
         </div>
     )
 }
