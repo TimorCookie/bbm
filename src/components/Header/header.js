@@ -24,11 +24,15 @@ export default function Header() {
             link: '/about'
         },
         {
-            name: '菜单三',
+            name: '新闻动态',
             link: '/about'
         },
         {
-            name: '菜单四',
+            name: '专家师资',
+            link: '/about'
+        },
+        {
+            name: '课程风采',
             link: '/about'
         }
     ]

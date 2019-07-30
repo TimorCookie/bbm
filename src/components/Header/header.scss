@@ -1,5 +1,5 @@
 .header-component{
-    width: 100%;
+    width: 70%;
     height: 120px;
    .menus-list{
         display: flex;
@@ -8,6 +8,19 @@
         .menu-item{
             flex: 1;
             line-height: 80px;
+            text-align: center;
+            a{
+                color: #555;
+                font-weight: bold;
+                display: inline-block;
+                width: 100%;
+            }
+            &:hover{
+                border-bottom: 2px #ff6c00 solid;
+            }
+            &:hover a{
+                color: #ff6c00;
+            }
         }
    }
 }
